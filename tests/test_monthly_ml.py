@@ -94,3 +94,18 @@ class MonthlyMLTests(unittest.TestCase):
         start = next(item for item in messages if item["type"] == "http.response.start")
         self.assertEqual(start["status"], 200)
         self.assertEqual(dict(start["headers"])[b"access-control-allow-origin"], b"http://localhost:5173")
+
+    def test_missing_runtime_dependency_is_actionable(self):
+        """Missing XGBoost must identify the dependency instead of a generic failure."""
+        with patch.object(monthly_ml, "model_details", side_effect=ModuleNotFoundError("missing xgboost", name="xgboost")), patch("routes.monthly_ml.logger.exception"):
+            status, body = test_predictions.PredictionTests().request_prediction("/predictions/monthly/details")
+        self.assertEqual(status, 503)
+        self.assertEqual(body["detail"]["code"], "monthly_dependency_missing")
+        self.assertEqual(body["detail"]["dependency"], "xgboost")
+
+    def test_vercel_training_is_explicitly_unsupported(self):
+        """Serverless inference must not attempt persistent training writes."""
+        with patch.dict("os.environ", {"VERCEL": "1"}), patch.object(monthly_ml, "train_monthly") as train:
+            status, body = test_predictions.PredictionTests().request_prediction("/predictions/monthly/train", body={})
+        self.assertEqual(status, 501)
+        train.assert_not_called()

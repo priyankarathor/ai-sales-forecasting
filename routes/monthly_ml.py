@@ -1,6 +1,7 @@
 """Monthly ML APIs for React training, inspection and scenario prediction."""
 
 import logging
+import os
 from typing import Literal
 
 from fastapi import APIRouter, HTTPException, Query
@@ -29,6 +30,18 @@ def invoke(function, *args):
         return function(*args)
     except BlockingIOError as exc:
         raise HTTPException(status_code=409, detail=str(exc)) from exc
+    except ModuleNotFoundError as exc:
+        logger.exception("Monthly model dependency is missing")
+        raise HTTPException(status_code=503, detail={
+            "code": "monthly_dependency_missing", "dependency": exc.name,
+            "message": "Install the project's runtime requirements and redeploy. The saved model requires xgboost, scikit-learn, numpy, pandas and joblib.",
+        }) from exc
+    except ImportError as exc:
+        logger.exception("Monthly model dependency could not be imported")
+        raise HTTPException(status_code=503, detail={
+            "code": "monthly_dependency_incompatible",
+            "message": "Model dependencies could not be imported. Redeploy with the pinned runtime requirements and inspect server logs.",
+        }) from exc
     except (FileNotFoundError, OSError) as exc:
         raise HTTPException(status_code=503, detail="Monthly artifacts unavailable. Run POST /predictions/monthly/train.") from exc
     except LookupError as exc:
@@ -66,4 +79,6 @@ def predict(request: LivePredictionRequest):
 @router.post("/train")
 def train():
     """Uploaded monthly sales par train karein; request complete hone tak wait karega."""
+    if os.getenv("VERCEL") == "1":
+        raise HTTPException(status_code=501, detail="Training requires persistent writable storage. Train locally or on a training worker, then redeploy the complete artifacts/monthly_demand directory. Prediction APIs remain available.")
     return invoke(monthly_ml.train_monthly)

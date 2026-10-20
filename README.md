@@ -1,5 +1,46 @@
 # Sales Forecasting API
 
+## Vercel deployment: monthly inference
+
+The monthly XGBoost artifact requires its runtime library even for `/details`
+and `/history`, because those endpoints deserialize `best_model.joblib`.
+Runtime dependencies now include the trained model's pinned XGBoost,
+scikit-learn, NumPy, pandas and joblib versions. Linux uses `xgboost-cpu` to
+avoid shipping CUDA/NCCL. `requirements.txt` is generated from `uv.lock`:
+
+```powershell
+uv export --no-hashes --no-dev --no-emit-project --format requirements-txt --output-file requirements.txt
+```
+
+Vercel's entrypoint is `app.main:app`, with Python 3.13 selected through the
+project's Python requirement. `vercel.json` includes trained artifacts and
+excludes local `.env`, virtual environments, tests, examples and chart PNGs.
+Deploy the complete active model directory: `active_run.json` refers to
+`artifacts/monthly_demand/runs/<run_id>/`, whose model, metadata, forecast and
+evaluation CSVs must all be present. Do not deploy only the pointer file.
+
+Set `MONGO_URL` (or `MONTHLY_MONGO_URL`) and `CORS_ORIGINS` in Vercel project
+environment settings. Local `.env` is not deployed. Redeploy the changed
+`pyproject.toml`, `uv.lock`, `requirements.txt`, `vercel.json`, API code and
+artifacts; if necessary clear the deployment build cache. Verify:
+
+```text
+GET /predictions/monthly/details
+GET /predictions/monthly/history?product_id=P1&country_id=C1
+POST /predictions/monthly/predict
+```
+
+The inference endpoints run on Vercel. `/predictions/monthly/train` explicitly
+returns 501 there because this implementation writes persistent local runs.
+Train locally or on a persistent training worker, then deploy the resulting
+artifact directory. Missing model packages now return a structured 503 with
+`monthly_dependency_missing` and the dependency name; incompatible imports
+return `monthly_dependency_incompatible`. Other failures still require the
+Vercel function log traceback to diagnose.
+
+References: [Vercel Python runtime](https://vercel.com/docs/functions/runtimes/python)
+and [XGBoost CPU installation](https://xgboost.readthedocs.io/en/stable/install.html).
+
 ## React: MongoDB GET APIs
 
 All routes below read the `sales_forecasting` database using the configured
