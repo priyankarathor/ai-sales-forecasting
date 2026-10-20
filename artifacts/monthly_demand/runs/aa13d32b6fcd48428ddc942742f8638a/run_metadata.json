@@ -1,0 +1,14 @@
+{
+  "best_model": "XGBoost",
+  "selection_rule": "2025 fixed-origin RMSE, MAE tie-breaker",
+  "data_source": "sales_forecasting.sales",
+  "final_training_period": "2023-01 through 2025-12",
+  "future_price_discount": "Per-series mean of last 12 observed months, held constant",
+  "ranges": "Approximate 90% absolute-error quantiles by horizon, pooled across 2025 series; no coverage guarantee",
+  "selection_and_calibration_share_holdout": true,
+  "predictors_excluded": [
+    "RM_Cost",
+    "Shipping",
+    "Profit_per_unit"
+  ]
+}

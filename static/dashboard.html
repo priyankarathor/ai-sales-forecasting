@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sales Forecast · Overview</title>
+<style>
+:root{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#172d36;background:#f2f5f4;font-synthesis:none}*{box-sizing:border-box}body{margin:0}header{background:#123c3b;color:white;padding:25px max(24px,calc((100vw - 1180px)/2));display:flex;align-items:center;justify-content:space-between;gap:20px}header strong{font-size:19px}header a{color:#d0e8df;text-decoration:none;font-size:14px}main{max-width:1228px;margin:auto;padding:36px 24px}.eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:11px;font-weight:700;color:#53746d}h1{font-size:clamp(26px,4vw,36px);letter-spacing:-1px;margin:8px 0}p{color:#5e7379;font-size:14px;line-height:1.6}.top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:22px}button{font:inherit;background:#176c58;color:white;border:0;border-radius:9px;padding:12px 19px;cursor:pointer}button:disabled{opacity:.55;cursor:wait}button:focus-visible,a:focus-visible{outline:3px solid #d89832;outline-offset:4px}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:22px 0}.card,.panel{background:white;border:1px solid #dce5e1;border-radius:14px;padding:22px}.label{font-size:12px;color:#5e7379}.value{font-size:29px;letter-spacing:-1px;font-weight:650;margin:12px 0 5px}.sub{font-size:12px;color:#607575}.accent{background:#e6f2ec;border-color:#c9e1d4}.grid{display:grid;grid-template-columns:1.65fr 1fr;gap:18px}.panel{margin-bottom:18px;min-width:0}h2{font-size:17px;margin:0 0 7px}.legend{display:flex;flex-wrap:wrap;gap:16px;font-size:12px;color:#526970;margin:16px 0}.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px}.chart svg{width:100%;height:auto;display:block}.chart{min-height:100px}.notice{border-radius:10px;padding:15px 18px;background:#fff4df;border:1px solid #e6d2aa;color:#6c501a;margin-bottom:20px;font-size:14px;line-height:1.6}.muted{font-size:13px;color:#647a7e}.feature{display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px solid #edf0ef;font-size:13px}.feature:last-child{border:0}table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:right;padding:12px;border-bottom:1px solid #e8eeeb}th:first-child,td:first-child{text-align:left}th{font-weight:500;color:#5e7379}.table-wrap{overflow:auto}footer{font-size:12px;color:#667b7b;margin-top:12px}[hidden]{display:none!important}@media(max-width:800px){.cards{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}}@media(max-width:450px){main{padding:24px 14px}.cards{gap:10px}.card{padding:16px}.top{align-items:flex-start}.value{font-size:25px}header{padding:20px 16px}}
+.planning-controls{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:18px 0}select,input{font:inherit;border:1px solid #bfcec7;border-radius:7px;padding:10px;background:white;max-width:100%}.input-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:18px 0}.input-grid label{display:flex;flex-direction:column;gap:8px;font-size:13px}.check-label{display:flex;align-items:flex-start;gap:10px;font-size:13px;line-height:1.6;margin:18px 0}.check-label input{margin-top:5px}.plan-result{padding:18px;background:#e6f2ec;border-radius:9px;margin-top:18px;line-height:1.7}.summary-value{font-size:26px;font-weight:650;color:#176c58}@media(max-width:650px){.input-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><strong>◈ &nbsp; Sales Forecast</strong><a href="/docs">API documentation ↗</a></header>
+<main>
+<div class="top"><div><div class="eyebrow">Prediction overview</div><h1>A clearer view of tomorrow.</h1><p id="context">Forecasts for your trained product and region.</p></div><button id="refresh" type="button">Refresh data</button></div>
+<div id="status" class="notice" role="status" aria-live="polite">Loading your saved model and sales history…</div>
+<section id="content" hidden>
+<div class="cards">
+<div class="card accent"><div class="label">Next observation forecast · units</div><div class="value" id="prediction">—</div><div class="sub" id="forecast-date"></div></div>
+<div class="card"><div class="label">Last recorded sales · units</div><div class="value" id="last-sales">—</div><div class="sub" id="last-date"></div></div>
+<div class="card"><div class="label">Model MAE · units</div><div class="value" id="mae">—</div><div class="sub">Average evaluation error · lower is better</div></div>
+<div class="card"><div class="label">Seven-observation baseline MAE · units</div><div class="value" id="baseline">—</div><div class="sub" id="split">Evaluation on held-out dates</div></div>
+</div>
+<div class="grid"><section class="panel"><h2>Sales history & next observation forecast</h2><p>Up to 90 observations. Missing observations appear as gaps.</p><div class="legend"><span><i class="dot" style="background:#16725b"></i>Actual sales</span><span><i class="dot" style="background:#cc8530"></i>Next observation forecast</span></div><div class="chart" id="history-chart"></div></section>
+<section class="panel"><h2>Forecast inputs & method</h2><p>Inputs from the latest seven observed periods. The baseline uses the observation from seven periods earlier.</p><div id="features"></div><p id="trained"></p></section></div>
+<section class="panel"><h2>Actual vs predicted · evaluation</h2><p>One-period predictions on held-out dates before the final model refit.</p><div class="legend"><span><i class="dot" style="background:#16725b"></i>Actual</span><span><i class="dot" style="background:#cc8530"></i>Predicted</span><span><i class="dot" style="background:#8296ae"></i>Seven-observation baseline</span></div><div class="chart" id="evaluation-chart"></div><div class="table-wrap" id="evaluation-table"></div></section>
+<section class="panel">
+<h2>Future sales outlook</h2><p>Forecast from the latest recorded sale, using the saved product and region. Later predictions use earlier predicted values.</p>
+<div class="planning-controls"><label for="forecast-window">Forecast window</label><select id="forecast-window"><option value="1">Next observation</option><option value="4" selected>Next 4 observations</option><option value="7">Next 7 observations</option><option value="8">Next 8 observations</option><option value="12">Next 12 observations</option><option value="30">Next 30 observations</option><option value="month">Next calendar month · dated observations</option></select></div>
+<div id="future-status" class="muted" role="status" aria-live="polite"></div>
+<div id="future-content" hidden><p id="future-description"></p><div class="label">Sum of forecast observations · units</div><div class="summary-value" id="future-total"></div><p class="muted" id="forecast-caveat"></p><div id="future-chart" class="chart"></div><div id="future-table" class="table-wrap"></div></div>
+</section>
+<section class="panel"><h2>Production planner</h2><p>Enter inventory for this product and region as of the latest recorded sales date. Production = forecast demand + safety stock − usable stock − confirmed incoming stock, rounded up to whole units.</p>
+<p id="production-status" class="muted" role="status" aria-live="polite">Load a forecast to plan production.</p>
+<form id="production-form" hidden>
+<div class="input-grid">
+<label>Inventory as of<input id="stock-date" type="date" required></label>
+<label>Current usable stock · units<input id="current-stock" type="number" min="0" step="any" required></label>
+<label>Safety stock · units<input id="safety-stock" type="number" min="0" step="any" required></label>
+<label>Confirmed incoming stock · units<input id="incoming-stock" type="number" min="0" step="any" required></label>
+<label>Capacity over selected window · units (optional)<input id="capacity" type="number" min="0" step="any"></label>
+</div>
+<label class="check-label"><input id="period-totals" type="checkbox" required><span>I confirm each recorded quantity is total demand for its whole day/week, not a single transaction or Monday-only sales.</span></label>
+<button id="calculate-production" type="submit">Calculate production</button>
+</form><div id="production-result" class="plan-result" hidden></div>
+</section>
+<footer id="updated"></footer><p class="muted">MAE is an error in units, not an accuracy percentage. Forecasts follow the saved model frequency: one day or seven days after the latest recorded sale. Weekly dated observations are not assumed to be weekly totals. One saved model covers one product and region.</p>
+</section>
+</main>
+<script>
+'use strict';
+const $ = id => document.getElementById(id);
+const number = value => typeof value === 'number' && Number.isFinite(value) ? value.toLocaleString(undefined,{maximumFractionDigits:2}) : '—';
+const svgNS = 'http://www.w3.org/2000/svg';
+let currentForecast=null, dashboardData=null, futureRequest=0, productionRequest=0;
+function el(tag, attrs={}, text){const node=document.createElementNS(svgNS,tag);for(const [key,value] of Object.entries(attrs))node.setAttribute(key,value);if(text!==undefined)node.textContent=text;return node;}
+function chart(target, rows, series, title){
+ const host=$(target);host.replaceChildren();if(!rows.length){host.textContent='Evaluation chart is unavailable. Retrain the model to save evaluation results.';return;}
+ const w=940,h=300,p={l:65,r:22,t:24,b:48};
+ const values=rows.flatMap(row=>series.map(s=>row[s.key])).filter(v=>typeof v==='number'&&Number.isFinite(v));
+ if(!values.length){host.textContent='No numeric observations available.';return;}
+ const max=Math.max(1,...values)*1.12,x=i=>p.l+i*(w-p.l-p.r)/Math.max(1,rows.length-1),y=v=>h-p.b-v/max*(h-p.t-p.b);
+ const svg=el('svg',{viewBox:`0 0 ${w} ${h}`,role:'img','aria-label':title});svg.append(el('title',{},title));
+ for(let i=0;i<=4;i++){const value=max*i/4,py=y(value);svg.append(el('line',{x1:p.l,x2:w-p.r,y1:py,y2:py,stroke:'#e6edeb'}));svg.append(el('text',{x:p.l-10,y:py+4,'text-anchor':'end',fill:'#607575','font-size':12},number(value)));}
+ const ticks=[...new Set([0,Math.floor((rows.length-1)/2),rows.length-1])];for(const i of ticks)svg.append(el('text',{x:x(i),y:h-16,'text-anchor':i===0?'start':i===rows.length-1?'end':'middle',fill:'#607575','font-size':12},rows[i].date));
+ for(const s of series){let path='',active=false;rows.forEach((row,i)=>{const value=row[s.key];if(typeof value!=='number'||!Number.isFinite(value)){active=false;return;}path+=`${active?'L':'M'}${x(i)},${y(value)} `;active=true;});svg.append(el('path',{d:path,fill:'none',stroke:s.color,'stroke-width':2.6,'stroke-linejoin':'round'}));rows.forEach((row,i)=>{const v=row[s.key];if(typeof v==='number'&&Number.isFinite(v)){const dot=el('circle',{cx:x(i),cy:y(v),r:s.point?6:3,fill:s.color});dot.append(el('title',{},`${row.date} · ${s.label}: ${number(v)} units`));svg.append(dot);}});}
+ host.append(svg);
+}
+function table(rows){const host=$('evaluation-table');host.replaceChildren();if(!rows.length)return;const table=document.createElement('table');const head=table.createTHead().insertRow();for(const title of ['Date','Actual units','Predicted units','Baseline units']){const th=document.createElement('th');th.scope='col';th.textContent=title;head.append(th);}const body=table.createTBody();for(const row of rows.slice(-10)){const tr=body.insertRow();for(const value of [row.date,number(row.actual_units),number(row.predicted_units),number(row.baseline_units)])tr.insertCell().textContent=value;}host.append(table);}
+async function load(){
+ dashboardData=null;currentForecast=null;futureRequest++;productionRequest++;$('production-result').hidden=true;
+ $('refresh').disabled=true;$('status').hidden=false;$('status').textContent='Loading your saved model and sales history…';$('content').hidden=true;
+ try{const response=await fetch('/predictions/dashboard-data',{cache:'no-store',signal:AbortSignal.timeout(20000)});const data=await response.json();if(!response.ok)throw new Error(typeof data.detail==='string'?data.detail:'Unable to load prediction. Check the API logs.');
+ $('context').textContent=`${data.product_id} · ${data.region} · ${data.frequency === '7D' ? 'Weekly dated observations' : 'Daily observations'}`;
+ $('prediction').textContent=number(data.predicted_units);$('forecast-date').textContent=data.forecast_date;
+ const history=data.history||[],last=history.at(-1);$('last-sales').textContent=number(last?.units_sold);$('last-date').textContent=data.last_sales_date;
+ const evaluation=data.evaluation||{};$('mae').textContent=number(evaluation.model_mae);$('baseline').textContent=number(evaluation.baseline_mae);
+ $('split').textContent=evaluation.train_days?`${evaluation.train_days} training / ${evaluation.test_days} evaluation ${evaluation.period_unit || 'days'}`:'Evaluation on held-out dates';
+ chart('history-chart',[...history,{date:data.forecast_date,forecast:data.predicted_units}],[{key:'units_sold',color:'#16725b',label:'Actual'},{key:'forecast',color:'#cc8530',label:'Forecast',point:true}],'Observed sales and next-period forecast');
+ const comparison=evaluation.comparison||[];chart('evaluation-chart',comparison,[{key:'actual_units',color:'#16725b',label:'Actual'},{key:'predicted_units',color:'#cc8530',label:'Predicted'},{key:'baseline_units',color:'#8296ae',label:'Baseline'}],'Actual, predicted and baseline units on evaluation dates');table(comparison);
+ $('features').replaceChildren();const period=data.frequency === '7D' ? 'week' : 'day';const labels={lag_1:`Previous ${period} · units`,lag_7:`Seven ${period}s earlier · units`,rolling_mean_7:`Seven-${period} average · units`,day_of_week:'Forecast weekday'};
+ for(const [key,label] of Object.entries(labels)){const row=document.createElement('div');row.className='feature';const name=document.createElement('span');name.textContent=label;const value=document.createElement('strong');value.textContent=key==='day_of_week'?['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'][data.features?.[key]]||'—':number(data.features?.[key]);row.append(name,value);$('features').append(row);}
+ $('trained').textContent=`Trained through ${data.model_trained_through}. Method: ${{seven_period_baseline:'seven-observation baseline',linear_regression:'Linear Regression',random_forest:'Random Forest'}[data.model_type] || data.model_type}.`;$('updated').textContent=`Updated ${new Date().toLocaleString()}`;$('content').hidden=false;$('status').hidden=true;
+ dashboardData=data;$('stock-date').value=data.last_sales_date;const unit=data.frequency==='7D'?'weeks':'days';for(const option of $('forecast-window').options){if(option.value!=='month')option.textContent=`Next ${option.value} ${unit}`;}await loadFuture();
+ }catch(error){$('status').textContent=error.name==='TimeoutError'?'The request timed out. Check MongoDB connectivity and try again.':error.message;$('context').textContent='Forecast data is unavailable. Train a model and refresh.';}
+ finally{$('refresh').disabled=false;}
+}
+function futureTable(rows){const host=$('future-table');host.replaceChildren();const table=document.createElement('table'),head=table.createTHead().insertRow();for(const text of ['Forecast observation date','Predicted units']){const th=document.createElement('th');th.scope='col';th.textContent=text;head.append(th);}const body=table.createTBody();for(const row of rows){const tr=body.insertRow();tr.insertCell().textContent=row.date;tr.insertCell().textContent=number(row.predicted_units);}host.append(table);}
+async function loadFuture(){
+ const requestId=++futureRequest;productionRequest++;currentForecast=null;$('future-content').hidden=true;$('production-form').hidden=true;$('production-result').hidden=true;$('production-status').textContent='Load a forecast to plan production.';$('future-status').textContent='Generating forecast…';
+ const selected=$('forecast-window').value,month=selected==='month';
+ try{const response=await fetch(`/predictions/future?periods=${month?4:selected}&calendar_month=${month}`,{cache:'no-store',signal:AbortSignal.timeout(30000)}),data=await response.json();if(requestId!==futureRequest)return;if(!response.ok)throw new Error(data.detail||'Forecast unavailable.');currentForecast=data;
+ $('future-total').textContent=number(data.total_predicted_units);$('future-description').textContent=`${data.product_id} · ${data.region} · ${data.periods} observations · ${data.forecast_date} to ${data.forecast_end_date}${data.calendar_month?' · Month '+data.calendar_month:''}`;
+ const now=new Date(),today=[now.getFullYear(),String(now.getMonth()+1).padStart(2,'0'),String(now.getDate()).padStart(2,'0')].join('-');const stale=data.forecast_date<today?`The first forecast date is in the past. Update sales history for current planning. `:'';
+ $('forecast-caveat').textContent=stale+data.interpretation+' '+data.validation_scope;
+ chart('future-chart',data.forecasts.map(row=>({date:row.date,forecast:row.predicted_units})),[{key:'forecast',color:'#cc8530',label:'Predicted units',point:true}],'Future observation forecasts');futureTable(data.forecasts);$('future-content').hidden=false;$('future-status').textContent='';
+ $('production-form').hidden=month;$('production-status').textContent=month?'Production planning requires consecutive periods after the inventory date. Select a period count instead of next-month-only observations.':'This estimates required volume, not a production schedule. Confirm incoming stock arrives within this window. Forecast error may increase across periods.';
+ }catch(error){if(requestId!==futureRequest)return;$('future-status').textContent=error.name==='TimeoutError'?'Forecast request timed out. Try a shorter window.':error.message;}
+}
+$('forecast-window').addEventListener('change',loadFuture);
+$('production-form').addEventListener('submit',async event=>{
+ event.preventDefault();if(!currentForecast)return;const requestId=++productionRequest,forecast=currentForecast;$('calculate-production').disabled=true;$('production-result').hidden=true;$('production-status').textContent='Calculating production…';
+ const capacity=$('capacity').value;
+ const payload={product_id:forecast.product_id,region:forecast.region,periods:Number($('forecast-window').value),calendar_month:false,units_are_period_totals:$('period-totals').checked,stock_as_of:$('stock-date').value,current_stock:Number($('current-stock').value),safety_stock:Number($('safety-stock').value),incoming_stock:Number($('incoming-stock').value),available_capacity:capacity===''?null:Number(capacity)};
+ try{const response=await fetch('/predictions/production-plan',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),signal:AbortSignal.timeout(30000)}),data=await response.json();if(requestId!==productionRequest||forecast!==currentForecast)return;if(!response.ok)throw new Error(typeof data.detail==='string'?data.detail:'Check inventory values, date, and demand confirmation.');const result=$('production-result');result.replaceChildren();const heading=document.createElement('strong');heading.textContent=`Required production: ${number(data.required_production_units)} units`;const text=document.createElement('p');text.textContent=`Forecast demand ${number(data.forecast.total_predicted_units)} + safety ${number(data.safety_stock)} − current stock ${number(data.current_stock)} − incoming ${number(data.incoming_stock)}. ${data.capacity_shortfall_units===null?'Capacity not supplied.':`Capacity shortfall: ${number(data.capacity_shortfall_units)} units.`}`;const note=document.createElement('p');note.textContent=data.planning_note;result.append(heading,text,note);result.hidden=false;$('production-status').textContent='Calculation complete. Inventory values are used for this calculation only.';
+ }catch(error){if(requestId===productionRequest)$('production-status').textContent=error.name==='TimeoutError'?'Production request timed out. Try again.':error.message;}finally{$('calculate-production').disabled=false;}
+});
+$('refresh').addEventListener('click',load);load();
+</script>
+</body></html>

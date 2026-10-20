@@ -1,0 +1,1922 @@
+{
+  "quality": {
+    "source": "sales",
+    "total_records": 10501,
+    "invalid_identifier_rows": 0,
+    "total_series": 101,
+    "ready_series": 100,
+    "series": [
+      {
+        "product_id": "101",
+        "region": "Central",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "101",
+        "region": "East",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "101",
+        "region": "North",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "101",
+        "region": "South",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "101",
+        "region": "West",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "102",
+        "region": "Central",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "102",
+        "region": "East",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "102",
+        "region": "North",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "102",
+        "region": "South",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "102",
+        "region": "West",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "103",
+        "region": "Central",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "103",
+        "region": "East",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "103",
+        "region": "North",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "103",
+        "region": "South",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "103",
+        "region": "West",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "104",
+        "region": "Central",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "104",
+        "region": "East",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "104",
+        "region": "North",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "104",
+        "region": "South",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "104",
+        "region": "West",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "105",
+        "region": "Central",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "105",
+        "region": "East",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "105",
+        "region": "North",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "105",
+        "region": "South",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "105",
+        "region": "West",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "106",
+        "region": "Central",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "106",
+        "region": "East",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "106",
+        "region": "North",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "106",
+        "region": "South",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "106",
+        "region": "West",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "107",
+        "region": "Central",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "107",
+        "region": "East",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "107",
+        "region": "North",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "107",
+        "region": "South",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "107",
+        "region": "West",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "108",
+        "region": "Central",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "108",
+        "region": "East",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "108",
+        "region": "North",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "108",
+        "region": "South",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "108",
+        "region": "West",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "109",
+        "region": "Central",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "109",
+        "region": "East",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "109",
+        "region": "North",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "109",
+        "region": "South",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "109",
+        "region": "West",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "110",
+        "region": "Central",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "110",
+        "region": "East",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "110",
+        "region": "North",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "110",
+        "region": "South",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "110",
+        "region": "West",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "111",
+        "region": "Central",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "111",
+        "region": "East",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "111",
+        "region": "North",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "111",
+        "region": "South",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "111",
+        "region": "West",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "112",
+        "region": "Central",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "112",
+        "region": "East",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "112",
+        "region": "North",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "112",
+        "region": "South",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "112",
+        "region": "West",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "113",
+        "region": "Central",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "113",
+        "region": "East",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "113",
+        "region": "North",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "113",
+        "region": "South",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "113",
+        "region": "West",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "114",
+        "region": "Central",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "114",
+        "region": "East",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "114",
+        "region": "North",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "114",
+        "region": "South",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "114",
+        "region": "West",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "115",
+        "region": "Central",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "115",
+        "region": "East",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "115",
+        "region": "North",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "115",
+        "region": "South",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "115",
+        "region": "West",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "116",
+        "region": "Central",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "116",
+        "region": "East",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "116",
+        "region": "North",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "116",
+        "region": "South",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "116",
+        "region": "West",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "117",
+        "region": "Central",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "117",
+        "region": "East",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "117",
+        "region": "North",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "117",
+        "region": "South",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "117",
+        "region": "West",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "118",
+        "region": "Central",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "118",
+        "region": "East",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "118",
+        "region": "North",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "118",
+        "region": "South",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "118",
+        "region": "West",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "119",
+        "region": "Central",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "119",
+        "region": "East",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "119",
+        "region": "North",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "119",
+        "region": "South",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "119",
+        "region": "West",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "120",
+        "region": "Central",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "120",
+        "region": "East",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "120",
+        "region": "North",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "120",
+        "region": "South",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "120",
+        "region": "West",
+        "source_rows": 105,
+        "duplicate_sale_ids": 0,
+        "frequency": "7D",
+        "observations": 105,
+        "missing_observations": 0,
+        "first_sales_date": "2024-10-07",
+        "last_sales_date": "2026-10-05",
+        "ready_for_training": true
+      },
+      {
+        "product_id": "P001",
+        "region": "Delhi",
+        "source_rows": 1,
+        "duplicate_sale_ids": 0,
+        "frequency": "D",
+        "observations": 1,
+        "missing_observations": 0,
+        "first_sales_date": "2026-10-13",
+        "last_sales_date": "2026-10-13",
+        "ready_for_training": false
+      }
+    ]
+  },
+  "training": {
+    "feature_columns": [
+      "lag_1",
+      "lag_7",
+      "rolling_mean_7",
+      "day_of_week"
+    ],
+    "target_column": "units_sold",
+    "product_id": "119",
+    "region": "North",
+    "frequency": "7D",
+    "model_type": "linear_regression",
+    "requested_model_type": "linear_regression",
+    "clip_nonnegative": true,
+    "test_fraction": 0.2,
+    "data_summary": {
+      "source": "sales",
+      "source_rows": 105,
+      "observations": 105,
+      "usable_observations": 98,
+      "first_sales_date": "2024-10-07"
+    },
+    "trained_through": "2026-10-05T00:00:00",
+    "evaluation": {
+      "train_days": 79,
+      "train_observations": 79,
+      "test_observations": 19,
+      "model_mae": 0.7656930928294686,
+      "candidate_mae": {
+        "linear_regression": 0.7656930928294686
+      },
+      "random_forest_mae": null,
+      "linear_regression_mae": 0.7656930928294686,
+      "baseline_mae": 0.9473684210526315,
+      "test_days": 19,
+      "forecast_horizon_days": 7,
+      "period_unit": "weeks",
+      "rmse": 0.9470193893360409,
+      "wape_pct": 12.541524796344744,
+      "scope": "Chronological holdout, one observation ahead using actual prior sales; not recursive horizon accuracy.",
+      "comparison": [
+        {
+          "date": "2026-06-01",
+          "actual_units": 5.0,
+          "predicted_units": 5.3056771822180515,
+          "baseline_units": 6.0
+        },
+        {
+          "date": "2026-06-08",
+          "actual_units": 6.0,
+          "predicted_units": 5.5555056318797265,
+          "baseline_units": 5.0
+        },
+        {
+          "date": "2026-06-15",
+          "actual_units": 5.0,
+          "predicted_units": 5.996992589930929,
+          "baseline_units": 5.0
+        },
+        {
+          "date": "2026-06-22",
+          "actual_units": 5.0,
+          "predicted_units": 5.3056771822180515,
+          "baseline_units": 6.0
+        },
+        {
+          "date": "2026-06-29",
+          "actual_units": 6.0,
+          "predicted_units": 5.17007433319936,
+          "baseline_units": 6.0
+        },
+        {
+          "date": "2026-07-06",
+          "actual_units": 6.0,
+          "predicted_units": 5.475958442231871,
+          "baseline_units": 6.0
+        },
+        {
+          "date": "2026-07-13",
+          "actual_units": 5.0,
+          "predicted_units": 5.861389740912238,
+          "baseline_units": 5.0
+        },
+        {
+          "date": "2026-07-20",
+          "actual_units": 5.0,
+          "predicted_units": 5.5555056318797265,
+          "baseline_units": 5.0
+        },
+        {
+          "date": "2026-07-27",
+          "actual_units": 6.0,
+          "predicted_units": 5.17007433319936,
+          "baseline_units": 6.0
+        },
+        {
+          "date": "2026-08-03",
+          "actual_units": 5.0,
+          "predicted_units": 5.861389740912238,
+          "baseline_units": 5.0
+        },
+        {
+          "date": "2026-08-10",
+          "actual_units": 6.0,
+          "predicted_units": 5.5555056318797265,
+          "baseline_units": 5.0
+        },
+        {
+          "date": "2026-08-17",
+          "actual_units": 5.0,
+          "predicted_units": 5.611561291250562,
+          "baseline_units": 6.0
+        },
+        {
+          "date": "2026-08-24",
+          "actual_units": 8.0,
+          "predicted_units": 5.17007433319936,
+          "baseline_units": 6.0
+        },
+        {
+          "date": "2026-08-31",
+          "actual_units": 6.0,
+          "predicted_units": 6.7443636570146435,
+          "baseline_units": 5.0
+        },
+        {
+          "date": "2026-09-07",
+          "actual_units": 6.0,
+          "predicted_units": 6.268198287968312,
+          "baseline_units": 5.0
+        },
+        {
+          "date": "2026-09-14",
+          "actual_units": 7.0,
+          "predicted_units": 6.018369838306637,
+          "baseline_units": 6.0
+        },
+        {
+          "date": "2026-09-21",
+          "actual_units": 8.0,
+          "predicted_units": 6.845288095038207,
+          "baseline_units": 5.0
+        },
+        {
+          "date": "2026-09-28",
+          "actual_units": 8.0,
+          "predicted_units": 7.172549452446425,
+          "baseline_units": 6.0
+        },
+        {
+          "date": "2026-10-05",
+          "actual_units": 8.0,
+          "predicted_units": 7.829186449164175,
+          "baseline_units": 5.0
+        }
+      ]
+    }
+  },
+  "forecast": {
+    "product_id": "119",
+    "region": "North",
+    "last_sales_date": "2026-10-05",
+    "forecast_date": "2026-10-12",
+    "predicted_units": 7.1,
+    "forecast_end_date": "2026-11-02",
+    "forecasts": [
+      {
+        "date": "2026-10-12",
+        "predicted_units": 7.1
+      },
+      {
+        "date": "2026-10-19",
+        "predicted_units": 7.47
+      },
+      {
+        "date": "2026-10-26",
+        "predicted_units": 7.78
+      },
+      {
+        "date": "2026-11-02",
+        "predicted_units": 7.73
+      }
+    ],
+    "periods": 4,
+    "total_predicted_units": 30.08,
+    "window": "next_periods",
+    "calendar_month": null,
+    "aggregation": "sum_of_forecast_observations",
+    "interpretation": "Weekly dated observations; not assumed to be whole-week totals. Month grouping uses observation dates, not prorated calendar-month demand.",
+    "validation_scope": "Saved MAE evaluates one period ahead only; multi-period forecasts are recursive and not separately validated.",
+    "model_trained_through": "2026-10-05",
+    "frequency": "7D",
+    "forecast_horizon_days": 7,
+    "requested_days": 28,
+    "forecast_window_days": 28,
+    "model_type": "linear_regression",
+    "history": [
+      {
+        "date": "2025-01-20",
+        "units_sold": 7.0
+      },
+      {
+        "date": "2025-01-27",
+        "units_sold": 6.0
+      },
+      {
+        "date": "2025-02-03",
+        "units_sold": 6.0
+      },
+      {
+        "date": "2025-02-10",
+        "units_sold": 5.0
+      },
+      {
+        "date": "2025-02-17",
+        "units_sold": 6.0
+      },
+      {
+        "date": "2025-02-24",
+        "units_sold": 5.0
+      },
+      {
+        "date": "2025-03-03",
+        "units_sold": 5.0
+      },
+      {
+        "date": "2025-03-10",
+        "units_sold": 5.0
+      },
+      {
+        "date": "2025-03-17",
+        "units_sold": 5.0
+      },
+      {
+        "date": "2025-03-24",
+        "units_sold": 6.0
+      },
+      {
+        "date": "2025-03-31",
+        "units_sold": 4.0
+      },
+      {
+        "date": "2025-04-07",
+        "units_sold": 5.0
+      },
+      {
+        "date": "2025-04-14",
+        "units_sold": 6.0
+      },
+      {
+        "date": "2025-04-21",
+        "units_sold": 4.0
+      },
+      {
+        "date": "2025-04-28",
+        "units_sold": 5.0
+      },
+      {
+        "date": "2025-05-05",
+        "units_sold": 4.0
+      },
+      {
+        "date": "2025-05-12",
+        "units_sold": 5.0
+      },
+      {
+        "date": "2025-05-19",
+        "units_sold": 4.0
+      },
+      {
+        "date": "2025-05-26",
+        "units_sold": 4.0
+      },
+      {
+        "date": "2025-06-02",
+        "units_sold": 4.0
+      },
+      {
+        "date": "2025-06-09",
+        "units_sold": 5.0
+      },
+      {
+        "date": "2025-06-16",
+        "units_sold": 4.0
+      },
+      {
+        "date": "2025-06-23",
+        "units_sold": 5.0
+      },
+      {
+        "date": "2025-06-30",
+        "units_sold": 4.0
+      },
+      {
+        "date": "2025-07-07",
+        "units_sold": 4.0
+      },
+      {
+        "date": "2025-07-14",
+        "units_sold": 5.0
+      },
+      {
+        "date": "2025-07-21",
+        "units_sold": 4.0
+      },
+      {
+        "date": "2025-07-28",
+        "units_sold": 4.0
+      },
+      {
+        "date": "2025-08-04",
+        "units_sold": 5.0
+      },
+      {
+        "date": "2025-08-11",
+        "units_sold": 6.0
+      },
+      {
+        "date": "2025-08-18",
+        "units_sold": 5.0
+      },
+      {
+        "date": "2025-08-25",
+        "units_sold": 6.0
+      },
+      {
+        "date": "2025-09-01",
+        "units_sold": 5.0
+      },
+      {
+        "date": "2025-09-08",
+        "units_sold": 5.0
+      },
+      {
+        "date": "2025-09-15",
+        "units_sold": 7.0
+      },
+      {
+        "date": "2025-09-22",
+        "units_sold": 7.0
+      },
+      {
+        "date": "2025-09-29",
+        "units_sold": 7.0
+      },
+      {
+        "date": "2025-10-06",
+        "units_sold": 10.0
+      },
+      {
+        "date": "2025-10-13",
+        "units_sold": 9.0
+      },
+      {
+        "date": "2025-10-20",
+        "units_sold": 9.0
+      },
+      {
+        "date": "2025-10-27",
+        "units_sold": 10.0
+      },
+      {
+        "date": "2025-11-03",
+        "units_sold": 8.0
+      },
+      {
+        "date": "2025-11-10",
+        "units_sold": 10.0
+      },
+      {
+        "date": "2025-11-17",
+        "units_sold": 10.0
+      },
+      {
+        "date": "2025-11-24",
+        "units_sold": 11.0
+      },
+      {
+        "date": "2025-12-01",
+        "units_sold": 7.0
+      },
+      {
+        "date": "2025-12-08",
+        "units_sold": 9.0
+      },
+      {
+        "date": "2025-12-15",
+        "units_sold": 10.0
+      },
+      {
+        "date": "2025-12-22",
+        "units_sold": 10.0
+      },
+      {
+        "date": "2025-12-29",
+        "units_sold": 9.0
+      },
+      {
+        "date": "2026-01-05",
+        "units_sold": 7.0
+      },
+      {
+        "date": "2026-01-12",
+        "units_sold": 8.0
+      },
+      {
+        "date": "2026-01-19",
+        "units_sold": 8.0
+      },
+      {
+        "date": "2026-01-26",
+        "units_sold": 7.0
+      },
+      {
+        "date": "2026-02-02",
+        "units_sold": 6.0
+      },
+      {
+        "date": "2026-02-09",
+        "units_sold": 6.0
+      },
+      {
+        "date": "2026-02-16",
+        "units_sold": 5.0
+      },
+      {
+        "date": "2026-02-23",
+        "units_sold": 7.0
+      },
+      {
+        "date": "2026-03-02",
+        "units_sold": 7.0
+      },
+      {
+        "date": "2026-03-09",
+        "units_sold": 7.0
+      },
+      {
+        "date": "2026-03-16",
+        "units_sold": 7.0
+      },
+      {
+        "date": "2026-03-23",
+        "units_sold": 6.0
+      },
+      {
+        "date": "2026-03-30",
+        "units_sold": 6.0
+      },
+      {
+        "date": "2026-04-06",
+        "units_sold": 5.0
+      },
+      {
+        "date": "2026-04-13",
+        "units_sold": 6.0
+      },
+      {
+        "date": "2026-04-20",
+        "units_sold": 5.0
+      },
+      {
+        "date": "2026-04-27",
+        "units_sold": 5.0
+      },
+      {
+        "date": "2026-05-04",
+        "units_sold": 6.0
+      },
+      {
+        "date": "2026-05-11",
+        "units_sold": 6.0
+      },
+      {
+        "date": "2026-05-18",
+        "units_sold": 6.0
+      },
+      {
+        "date": "2026-05-25",
+        "units_sold": 5.0
+      },
+      {
+        "date": "2026-06-01",
+        "units_sold": 5.0
+      },
+      {
+        "date": "2026-06-08",
+        "units_sold": 6.0
+      },
+      {
+        "date": "2026-06-15",
+        "units_sold": 5.0
+      },
+      {
+        "date": "2026-06-22",
+        "units_sold": 5.0
+      },
+      {
+        "date": "2026-06-29",
+        "units_sold": 6.0
+      },
+      {
+        "date": "2026-07-06",
+        "units_sold": 6.0
+      },
+      {
+        "date": "2026-07-13",
+        "units_sold": 5.0
+      },
+      {
+        "date": "2026-07-20",
+        "units_sold": 5.0
+      },
+      {
+        "date": "2026-07-27",
+        "units_sold": 6.0
+      },
+      {
+        "date": "2026-08-03",
+        "units_sold": 5.0
+      },
+      {
+        "date": "2026-08-10",
+        "units_sold": 6.0
+      },
+      {
+        "date": "2026-08-17",
+        "units_sold": 5.0
+      },
+      {
+        "date": "2026-08-24",
+        "units_sold": 8.0
+      },
+      {
+        "date": "2026-08-31",
+        "units_sold": 6.0
+      },
+      {
+        "date": "2026-09-07",
+        "units_sold": 6.0
+      },
+      {
+        "date": "2026-09-14",
+        "units_sold": 7.0
+      },
+      {
+        "date": "2026-09-21",
+        "units_sold": 8.0
+      },
+      {
+        "date": "2026-09-28",
+        "units_sold": 8.0
+      },
+      {
+        "date": "2026-10-05",
+        "units_sold": 8.0
+      }
+    ],
+    "evaluation": {
+      "train_days": 79,
+      "train_observations": 79,
+      "test_observations": 19,
+      "model_mae": 0.7656930928294686,
+      "candidate_mae": {
+        "linear_regression": 0.7656930928294686
+      },
+      "random_forest_mae": null,
+      "linear_regression_mae": 0.7656930928294686,
+      "baseline_mae": 0.9473684210526315,
+      "test_days": 19,
+      "forecast_horizon_days": 7,
+      "period_unit": "weeks",
+      "rmse": 0.9470193893360409,
+      "wape_pct": 12.541524796344744,
+      "scope": "Chronological holdout, one observation ahead using actual prior sales; not recursive horizon accuracy.",
+      "comparison": [
+        {
+          "date": "2026-06-01",
+          "actual_units": 5.0,
+          "predicted_units": 5.3056771822180515,
+          "baseline_units": 6.0
+        },
+        {
+          "date": "2026-06-08",
+          "actual_units": 6.0,
+          "predicted_units": 5.5555056318797265,
+          "baseline_units": 5.0
+        },
+        {
+          "date": "2026-06-15",
+          "actual_units": 5.0,
+          "predicted_units": 5.996992589930929,
+          "baseline_units": 5.0
+        },
+        {
+          "date": "2026-06-22",
+          "actual_units": 5.0,
+          "predicted_units": 5.3056771822180515,
+          "baseline_units": 6.0
+        },
+        {
+          "date": "2026-06-29",
+          "actual_units": 6.0,
+          "predicted_units": 5.17007433319936,
+          "baseline_units": 6.0
+        },
+        {
+          "date": "2026-07-06",
+          "actual_units": 6.0,
+          "predicted_units": 5.475958442231871,
+          "baseline_units": 6.0
+        },
+        {
+          "date": "2026-07-13",
+          "actual_units": 5.0,
+          "predicted_units": 5.861389740912238,
+          "baseline_units": 5.0
+        },
+        {
+          "date": "2026-07-20",
+          "actual_units": 5.0,
+          "predicted_units": 5.5555056318797265,
+          "baseline_units": 5.0
+        },
+        {
+          "date": "2026-07-27",
+          "actual_units": 6.0,
+          "predicted_units": 5.17007433319936,
+          "baseline_units": 6.0
+        },
+        {
+          "date": "2026-08-03",
+          "actual_units": 5.0,
+          "predicted_units": 5.861389740912238,
+          "baseline_units": 5.0
+        },
+        {
+          "date": "2026-08-10",
+          "actual_units": 6.0,
+          "predicted_units": 5.5555056318797265,
+          "baseline_units": 5.0
+        },
+        {
+          "date": "2026-08-17",
+          "actual_units": 5.0,
+          "predicted_units": 5.611561291250562,
+          "baseline_units": 6.0
+        },
+        {
+          "date": "2026-08-24",
+          "actual_units": 8.0,
+          "predicted_units": 5.17007433319936,
+          "baseline_units": 6.0
+        },
+        {
+          "date": "2026-08-31",
+          "actual_units": 6.0,
+          "predicted_units": 6.7443636570146435,
+          "baseline_units": 5.0
+        },
+        {
+          "date": "2026-09-07",
+          "actual_units": 6.0,
+          "predicted_units": 6.268198287968312,
+          "baseline_units": 5.0
+        },
+        {
+          "date": "2026-09-14",
+          "actual_units": 7.0,
+          "predicted_units": 6.018369838306637,
+          "baseline_units": 6.0
+        },
+        {
+          "date": "2026-09-21",
+          "actual_units": 8.0,
+          "predicted_units": 6.845288095038207,
+          "baseline_units": 5.0
+        },
+        {
+          "date": "2026-09-28",
+          "actual_units": 8.0,
+          "predicted_units": 7.172549452446425,
+          "baseline_units": 6.0
+        },
+        {
+          "date": "2026-10-05",
+          "actual_units": 8.0,
+          "predicted_units": 7.829186449164175,
+          "baseline_units": 5.0
+        }
+      ]
+    },
+    "features": {
+      "lag_1": 8.0,
+      "lag_7": 8.0,
+      "rolling_mean_7": 7.285714285714286,
+      "day_of_week": 0.0
+    }
+  }
+}
