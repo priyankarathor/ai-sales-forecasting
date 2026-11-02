@@ -8,7 +8,6 @@ from ml.data_loader import load_sales
 from ml.artifacts import model_path
 from ml.preprocessing import prepare_daily_sales, prepare_model_series
 
-
 MODEL_PATH = (
     Path(__file__).resolve().parents[1]
     / "artifacts"

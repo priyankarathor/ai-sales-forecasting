@@ -1,0 +1,11 @@
+{
+  "tenant_id": "monthly_demo",
+  "source": {"type": "mongo", "uri_env": "MONTHLY_READONLY_MONGO_URL", "database": "sales_forecasting", "collection": "sales"},
+  "mapping": {"date": "Month", "product": "Product_ID", "region": "Country_ID", "quantity": "Units_Sold"},
+  "frequency": "MS",
+  "horizon": 3,
+  "backtest_folds": 2,
+  "candidate_models": ["random_forest", "hist_gb", "xgboost"],
+  "returns_policy": "reject",
+  "source_grain": "period"
+}

@@ -1,0 +1,9 @@
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.py[cod]
+backend/models/
+artifacts/forecast_worker/
+data/forecast_demo.csv

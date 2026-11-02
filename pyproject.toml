@@ -16,9 +16,15 @@ dependencies = [
     "numpy==2.5.3",
     "xgboost==3.4.1; sys_platform != 'linux'",
     "xgboost-cpu==3.4.1; sys_platform == 'linux'",
+    "sqlalchemy>=2.1.6",
+    "psycopg[binary]>=3.3.6",
 ]
 
 [project.optional-dependencies]
+forecast-worker = [
+    "sqlalchemy>=2.0,<3",
+    "psycopg[binary]>=3.2,<4",
+]
 production-planning = [
     "scipy>=1.13.0",
     "matplotlib>=3.9.0",

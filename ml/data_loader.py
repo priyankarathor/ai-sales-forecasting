@@ -1,7 +1,5 @@
 import pandas as pd
-
 from database.connection import sales_collection
-
 
 SALES_COLUMNS = [
     "sale_id",
@@ -10,10 +8,9 @@ SALES_COLUMNS = [
     "region",
     "quantity_sold",
     "mrp_inr",
-    "discount_pct",
+    "discount_pct", 
     "net_revenue_inr",
 ]
-
 
 def load_sales(
     product_id: str | None = None,

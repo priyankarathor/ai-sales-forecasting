@@ -4,7 +4,6 @@ import pandas as pd
 from io import BytesIO
 from typing import Annotated
 from starlette.datastructures import UploadFile as StarletteUploadFile
-
 from schemas.sales import SalesSchema
 from models.sales import insert_sales
 

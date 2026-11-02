@@ -7,7 +7,6 @@ from pymongo import MongoClient
 from pymongo.errors import PyMongoError
 from database.monthly_connection import get_monthly_mongo_uri
 
-
 CSV_COLUMNS = [
     "Month", "Product_ID", "Country_ID", "Units_Sold", "Selling_Price",
     "Discount", "RM_Cost", "Shipping", "Profit_per_unit", "Month_Number",

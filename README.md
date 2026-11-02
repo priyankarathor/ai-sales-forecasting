@@ -1,5 +1,19 @@
 # Sales Forecasting API
 
+## Local PostgreSQL company and CSV API
+
+Company registration, authenticated CSV uploads, upload history and saved
+predictions are available under `/sql`. Setup and the worker training flow:
+[PostgreSQL API guide](docs/postgresql-api.md).
+
+## Tenant-scoped forecasting worker
+
+The new backend pipeline adds raw/clean SQL storage, recursive rolling-origin
+evaluation, an untouched final baseline gate, per-tenant versioned models,
+append-only forecasts, and later actual-vs-forecast accuracy reports.
+Run separately from existing HTTP routes. Setup, commands and current limits:
+[forecasting worker](docs/forecasting-worker.md).
+
 ## Vercel deployment: monthly inference
 
 The monthly XGBoost artifact requires its runtime library even for `/details`

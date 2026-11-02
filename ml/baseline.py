@@ -1,5 +1,5 @@
 class SevenPeriodBaseline:
-    """Predict the observed units from seven observation periods earlier."""
+   
 
     def fit(self, features, target):
         return self

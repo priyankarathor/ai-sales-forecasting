@@ -18,7 +18,6 @@ router = APIRouter(
     tags=["Sales Predictions"],
 )
 
-
 @router.post("/train")
 def train_prediction_model(request: TrainingRequest):
     try:
