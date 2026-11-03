@@ -68,7 +68,7 @@ def clean_load(cfg, store, load_id):
     return quality
 
 
-def run(cfg, store, models_dir=Path("backend/models"), *, load_id=None):
+def _run_unlocked(cfg, store, models_dir=Path("backend/models"), *, load_id=None):
     if load_id is None:
         load_id = uuid4().hex
         store.save_raw(cfg.tenant_id, load_id, pull(cfg))
@@ -114,6 +114,12 @@ def run(cfg, store, models_dir=Path("backend/models"), *, load_id=None):
                        "error_type": type(exc).__name__, "load_id": load_id})
         store.save_run(cfg.tenant_id, load_id, run_id, result)
         raise
+
+
+def run(cfg, store, models_dir=Path("backend/models"), *, load_id=None):
+    """Run one tenant job at a time; PostgreSQL advisory locks span the full job."""
+    with store.tenant_lock(cfg.tenant_id):
+        return _run_unlocked(cfg, store, models_dir, load_id=load_id)
 
 
 def load_model(path, tenant_id):

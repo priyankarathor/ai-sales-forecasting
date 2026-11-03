@@ -174,7 +174,7 @@ missing artifacts/training failures return 503.
 Start the server and open <http://127.0.0.1:8000/docs>:
 
 ```powershell
-.\.venv\Scripts\python.exe -m uvicorn app.main:app --reload
+.\.venv\Scripts\python.exe -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
 ```
 
 Under **Monthly JSON Imports**, use
@@ -479,7 +479,7 @@ your local `.env` file and make sure MongoDB is reachable. The database name
 used by the application is `sales_forcasting`.
 
 ```powershell
-.\.venv\Scripts\python.exe -m uvicorn app.main:app --reload
+.\.venv\Scripts\python.exe -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
 ```
 
 Open <http://127.0.0.1:8000/docs> to upload data and try the API.

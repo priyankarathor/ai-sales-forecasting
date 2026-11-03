@@ -20,7 +20,7 @@ or commit `.env`. An example is available in `.env.example`.
 uv sync --extra forecast-worker
 .\.venv\Scripts\python.exe -m ml.forecasting.worker check
 .\.venv\Scripts\python.exe -m ml.forecasting.worker init
-.\.venv\Scripts\python.exe -m uvicorn app.main:app --reload
+.\.venv\Scripts\python.exe -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
 ```
 
 `check` executes `SELECT 1`. `init` explicitly creates missing tables; requests
@@ -29,6 +29,8 @@ tables are additive. `init` does not migrate or alter existing table definitions
 Keep the API process running and use another terminal for training.
 
 Open `http://127.0.0.1:8000/docs` and find **PostgreSQL forecasting**.
+For local development, use `127.0.0.1` in the browser. `0.0.0.0` is a
+server listen address and is not a valid browser destination.
 
 ## Register a company
 

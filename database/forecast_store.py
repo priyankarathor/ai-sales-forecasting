@@ -3,6 +3,7 @@
 PostgreSQL is the production target. SQLite is supported for offline integration tests.
 Schema creation is explicit through the worker's init command, never during a request.
 """
+from contextlib import contextmanager
 from datetime import datetime, timezone
 import hashlib
 import hmac
@@ -65,6 +66,29 @@ class ForecastStore:
 
     def create_schema(self):
         metadata.create_all(self.engine)
+
+    @contextmanager
+    def tenant_lock(self, tenant_id):
+        """Serialize full-snapshot writes and training for a tenant on PostgreSQL."""
+        if self.engine.dialect.name != "postgresql":
+            # SQLite is for local/offline use only; production must use PostgreSQL.
+            yield
+            return
+        connection = self.engine.connect()
+        locked = False
+        try:
+            locked = bool(connection.exec_driver_sql(
+                "SELECT pg_try_advisory_lock(hashtextextended(%s, 0))", (tenant_id,)
+            ).scalar_one())
+            if not locked:
+                raise RuntimeError(f"A forecasting operation is already active for tenant {tenant_id}")
+            yield
+        finally:
+            if locked:
+                connection.exec_driver_sql(
+                    "SELECT pg_advisory_unlock(hashtextextended(%s, 0))", (tenant_id,)
+                )
+            connection.close()
 
     def register_tenant(self, tenant_id, company_name):
         key = secrets.token_urlsafe(32)

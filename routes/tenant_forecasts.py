@@ -101,13 +101,16 @@ def upload_csv(tenant_id: str, file: Annotated[UploadFile, File()],
         raise HTTPException(422, "CSV contains no data rows")
     load_id = uuid4().hex
     # All columns are preserved, including fields unused by the demand model.
-    store.save_raw(tenant_id, load_id, frame.to_dict("records"), config=asdict(cfg))
     from ml.forecasting.worker import clean_load
     try:
-        quality = clean_load(cfg, store, load_id)
+        with store.tenant_lock(tenant_id):
+            store.save_raw(tenant_id, load_id, frame.to_dict("records"), config=asdict(cfg))
+            quality = clean_load(cfg, store, load_id)
     except ValueError as exc:
         raise HTTPException(422, {"load_id": load_id, "message": str(exc),
                                   "raw_data_preserved": True}) from None
+    except RuntimeError as exc:
+        raise HTTPException(409, str(exc)) from None
     return {"tenant_id": tenant_id, "load_id": load_id, "status": "clean", "quality": quality,
             "training_command": f"python -m ml.forecasting.worker run-upload --tenant-id {tenant_id} --load-id {load_id}"}
 

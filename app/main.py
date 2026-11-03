@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse
 from pathlib import Path
 import os
@@ -12,7 +12,6 @@ from routes import forecast
 from routes.predictions import router as predictions_router
 from routes.monthly_data import router as monthly_data_router
 from routes.monthly_ml import router as monthly_ml_router
-from routes.monthly_read import router as monthly_read_router
 from routes.monthly_read import router as monthly_read_router
 
 app = FastAPI(
@@ -34,7 +33,32 @@ app.include_router(predictions_router)
 app.include_router(monthly_data_router)
 app.include_router(monthly_ml_router)
 app.include_router(monthly_read_router)
-app.include_router(monthly_read_router)
+
+
+@app.get("/health/live", tags=["Health"])
+def liveness():
+    """Process liveness; intentionally independent of external services."""
+    return {"status": "ok"}
+
+
+@app.get("/health/ready", tags=["Health"])
+def readiness():
+    """Readiness for the SQL forecasting API's application-owned database."""
+    try:
+        from sqlalchemy import text
+        from database.forecast_store import ForecastStore
+
+        store = ForecastStore()
+        try:
+            with store.engine.connect() as connection:
+                # Require the forecasting schema too, so an uninitialized
+                # database cannot pass readiness and receive customer traffic.
+                connection.execute(text("SELECT 1 FROM tenants LIMIT 1"))
+        finally:
+            store.engine.dispose()
+    except Exception:
+        raise HTTPException(status_code=503, detail="Forecast database unavailable") from None
+    return {"status": "ok", "forecast_database": "ok"}
 
 
 @app.get("/dashboard", include_in_schema=False)

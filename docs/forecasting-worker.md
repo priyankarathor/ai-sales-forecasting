@@ -102,10 +102,11 @@ python -m ml.forecasting.worker clean --config backend/configs/demo.json --load-
 python -m ml.forecasting.worker run --config backend/configs/demo.json --load-id LOAD_ID
 ```
 
-The first release assumes a single scheduled worker per tenant. Do not schedule
-overlapping pulls/cleaning for the same tenant. Schedule different tenants
-independently. Chunked ingestion and worker-level locks are still needed for
-larger-scale operations.
+PostgreSQL advisory locks serialize upload/cleaning and training operations for
+the same tenant. A concurrent operation receives a conflict instead of racing
+the tenant's full-snapshot clean table. SQLite does not provide this protection
+and is only for offline verification. Chunked ingestion is still needed for
+larger snapshots.
 
 ## Honest model evaluation
 
@@ -166,8 +167,39 @@ baseline ties, zero denominators, optional XGBoost, tenant isolation, version
 history, and regional accuracy joins. SQL integration uses isolated SQLite.
 Real PostgreSQL integration must be verified with `FORECAST_DATABASE_URL` before
 deployment. Authenticated job APIs, scheduler, monitoring/drift alerts, row-level
-security, migrations, backups, traffic features and the Next.js UI are not
-implemented by this worker phase.
+security, versioned migrations, backups, traffic features and the Next.js UI are
+not implemented by this worker phase.
+
+## Production deployment gate
+
+Run FastAPI and the persistent worker/CLI as separately managed processes. Do
+not run training in a serverless function or inside an API request. Before
+exposing a deployment to customers:
+
+1. Use PostgreSQL on a persistent host. Apply schema changes through a reviewed,
+   versioned migration process; `init` only creates missing tables and is not a
+   migration tool.
+2. Set `FORECAST_DATABASE_URL`, source MongoDB URI environment variables, and
+   `CORS_ORIGINS` in the deployment secret/configuration manager. Use a database
+   role with only required privileges and source MongoDB users restricted to
+   read-only access. Never ship `.env`.
+3. Keep model artifacts on persistent, access-controlled storage. The database
+   is authoritative for promotion. Back up the database and model artifact
+   volume, and rehearse restoration.
+4. Configure probes: `GET /health/live` checks process liveness and
+   `GET /health/ready` checks the forecasting database. Readiness returns 503
+   when that database is unavailable.
+5. Run persistent workers. PostgreSQL advisory locks prevent same-tenant
+   training and upload/cleaning overlap. Monitoring, scheduling, alerting, and
+   capacity management must be supplied by the deployment host.
+6. Verify staging with a real PostgreSQL instance, representative tenant data,
+   a restore test, and a reviewed business acceptance threshold. The synthetic
+   demo and SQLite checks do not establish production accuracy or availability.
+
+This repository does not include an infrastructure-specific deployment
+manifest or migration history. Production readiness depends on completing the
+host-specific operations above; application code alone cannot certify a live
+deployment.
 
 Implementation references: [scikit-learn leakage and pipelines](https://scikit-learn.org/stable/common_pitfalls.html)
 and [SQLAlchemy transaction contexts](https://docs.sqlalchemy.org/en/20/core/connections.html#connect-and-begin-once-from-the-engine).
